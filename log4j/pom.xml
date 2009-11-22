@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.constretto.examples</groupId>
+  <artifactId>log4j</artifactId>
+  <version>1.0</version>
+
+  <name>Constretto Examples :: Atom News Feeder - ${project.version}</name>
+  <inceptionYear>2009</inceptionYear>
+  <url>http://constretto.org</url>
+  <description>
+    A atom based news feed, with publishing features, for demonstrating usage of Constretto
+    And also used for publishing news at the constretto.org website.
+  </description>
+
+  <scm>
+    <developerConnection>git://github.com/constretto/constretto-examples.git</developerConnection>
+    <url>http://github.com/constretto/constretto-examples/tree/master</url>
+  </scm>
+
+  <developers>
+    <developer>
+      <id>kaarenilsen</id>
+      <name>Kaare Nilsen</name>
+      <email>kaare.nilsen@gmail.com</email>
+      <organization>Arktekk AS</organization>
+      <organizationUrl>http://arktekk.no</organizationUrl>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
+
+  <licenses>
+    <license>
+      <name>ASF v2 License</name>
+      <url>LICENSE.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <dependencies>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.13</version>
+    </dependency>
+    <dependency>
+      <groupId>org.constretto</groupId>
+      <artifactId>constretto-api</artifactId>
+      <version>1.0-rc-11</version>
+    </dependency>
+    <dependency>
+      <groupId>org.constretto</groupId>
+      <artifactId>constretto-core</artifactId>
+      <version>1.0-rc-11</version>
+    </dependency>
+    <dependency>
+      <groupId>org.constretto</groupId>
+      <artifactId>constretto-test</artifactId>
+      <version>1.0-rc-11</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.4</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <target>1.5</target>
+          <source>1.5</source>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
