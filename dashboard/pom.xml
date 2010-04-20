@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.constretto.examples</groupId>
+  <artifactId>dashboard</artifactId>
+  <version>1.0</version>
+
+  <name>Constretto Examples :: Dashboard - ${project.version}</name>
+  <inceptionYear>2009</inceptionYear>
+  <url>http://constretto.org</url>
+  <description>
+    A simple example showing a simple web dashboard using spring MVC
+  </description>
+
+  <scm>
+    <developerConnection>git://github.com/constretto/constretto-examples.git</developerConnection>
+    <url>http://github.com/constretto/constretto-examples/tree/master</url>
+  </scm>
+
+  <properties>
+    <constretto.version>1.0.1</constretto.version>
+    <spring.version>3.0.2.RELEASE</spring.version>
+  </properties>
+
+  <developers>
+    <developer>
+      <id>kaarenilsen</id>
+      <name>Kaare Nilsen</name>
+      <email>kaare.nilsen@gmail.com</email>
+      <organization>Arktekk AS</organization>
+      <organizationUrl>http://arktekk.no</organizationUrl>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
+
+  <licenses>
+    <license>
+      <name>ASF v2 License</name>
+      <url>LICENSE.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <dependencies>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.13</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.constretto</groupId>
+      <artifactId>constretto-api</artifactId>
+      <version>${constretto.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.constretto</groupId>
+      <artifactId>constretto-spring</artifactId>
+      <version>${constretto.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.constretto</groupId>
+      <artifactId>constretto-core</artifactId>
+      <version>${constretto.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.7</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mortbay.jetty</groupId>
+      <artifactId>jetty</artifactId>
+      <version>6.1.18</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mortbay.jetty</groupId>
+      <artifactId>jsp-2.1</artifactId>
+      <version>6.1.14</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <target>1.5</target>
+          <source>1.5</source>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.mortbay.jetty</groupId>
+        <artifactId>maven-jetty-plugin</artifactId>
+        <version>6.1.18</version>
+        <configuration>
+          <useTestClasspath>true</useTestClasspath>
+          <contextPath>/</contextPath>
+          <connectors>
+            <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+              <port>8080</port>
+            </connector>
+          </connectors>
+          <scanIntervalSeconds>5</scanIntervalSeconds>
+          <systemProperties>
+            <systemProperty>
+              <key>CONSTRETTO_TAGS</key>
+              <value>development,constretto,exampletag</value>
+            </systemProperty>
+            <systemProperty>
+              <key>CONSTRETTO_ENV</key>
+              <value>development,constretto,exampleenv</value>
+            </systemProperty>
+          </systemProperties>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
