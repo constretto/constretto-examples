@@ -27,7 +27,7 @@
         </example>
     </function>
 
-  <function>
+    <function>
         <name>hasValue</name>
         <function-class>org.constretto.examples.dashboard.ConstrettoJSTLFunctions</function-class>
         <function-signature>java.lang.Boolean hasValue(java.lang.String)</function-signature>
@@ -36,6 +36,34 @@
         </example>
     </function>
 
+    <tag>
+        <description>
+            The basic iteration tag, accepting many different
+            collection types and supporting subsetting and other
+            functionality
+        </description>
+        <name>forEach</name>
+        <tag-class>org.constretto.web.tag.ConstrettoForEachTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description>Collection of items to iterate over.</description>
+            <name>expression</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>
+                Name of the exported scoped variable for the
+                current item of the iteration. This scoped
+                variable has nested visibility. Its type depends
+                on the object of the underlying collection.
+            </description>
+            <name>var</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
 
 
 </taglib>

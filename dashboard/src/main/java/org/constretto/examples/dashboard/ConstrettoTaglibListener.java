@@ -16,6 +16,7 @@
 package org.constretto.examples.dashboard;
 
 import org.constretto.ConstrettoConfiguration;
+import org.constretto.web.tag.ConstrettoForEachTag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
@@ -38,6 +39,7 @@ public class ConstrettoTaglibListener implements javax.servlet.ServletContextLis
     @Autowired
     public void setConfiguration(ConstrettoConfiguration configuration) {
         ConstrettoJSTLFunctions.configuration(configuration);
+        ConstrettoForEachTag.configuration(configuration);
     }
 
     public void contextDestroyed(ServletContextEvent sce) {

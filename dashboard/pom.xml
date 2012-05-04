@@ -19,7 +19,7 @@
   </scm>
 
   <properties>
-    <constretto.version>1.0.1</constretto.version>
+    <constretto.version>2.0.1-SNAPSHOT</constretto.version>
     <spring.version>3.0.2.RELEASE</spring.version>
   </properties>
 
